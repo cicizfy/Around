@@ -9,5 +9,5 @@ jobs:
       - setup_remote_docker
       - run: |
           docker build -t cicify/around .
-          docker login -u="cicizfy" -p="Hermit19950524"
+          docker login -u="$DOCKERHUB_USERNAME" -p="$DOCKERHUB_PASSWORD"
           docker push cicizfy/around
