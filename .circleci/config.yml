@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.9
+    working_directory: /go/src/github.com/laioffer/Around
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: |
+          docker build -t cicify/around .
+          docker login -u="cicizfy" -p="Hermit19950524"
+          docker push cicizfy/around
